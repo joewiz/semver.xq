@@ -34,49 +34,49 @@ declare namespace test = "http://exist-db.org/xquery/xqsuite";
 
 
 declare
-	%test:assertTrue
+    %test:assertTrue
 function epst:validate-major() {
-	semver:validate-expath-package-semver-template("2")
+    semver:validate-expath-package-semver-template("2")
 };
 
 declare
-	%test:assertTrue
+    %test:assertTrue
 function epst:validate-minor() {
-	semver:validate-expath-package-semver-template("2.3")
+    semver:validate-expath-package-semver-template("2.3")
 };
 
 declare
-	%test:assertFalse
+    %test:assertFalse
 function epst:validate-patch() {
-	semver:validate-expath-package-semver-template("2.3.4")
+    semver:validate-expath-package-semver-template("2.3.4")
 };
 
 declare
-	%test:assertFalse
+    %test:assertFalse
 function epst:validate-patch-zerp() {
-	semver:validate-expath-package-semver-template("2.3.0")
+    semver:validate-expath-package-semver-template("2.3.0")
 };
 
 declare
-	%test:assertEquals("2.0.0")
+    %test:assertEquals("2.0.0")
 function epst:major-min() {
-	semver:resolve-expath-package-semver-template-min("2")
+    semver:resolve-expath-package-semver-template-min("2")
 };
 
 declare
-	%test:assertEquals("3.0.0")
+    %test:assertEquals("3.0.0")
 function epst:major-max() {
-	semver:resolve-expath-package-semver-template-max("2")
+    semver:resolve-expath-package-semver-template-max("2")
 };
 
 declare
-	%test:assertEquals("2.1.0")
+    %test:assertEquals("2.1.0")
 function epst:minor-min() {
-	semver:resolve-expath-package-semver-template-min("2.1")
+    semver:resolve-expath-package-semver-template-min("2.1")
 };
 
 declare
-	%test:assertEquals("2.2.0")
+    %test:assertEquals("2.2.0")
 function epst:minor-max() {
-	semver:resolve-expath-package-semver-template-max("2.1")
+    semver:resolve-expath-package-semver-template-max("2.1")
 };
